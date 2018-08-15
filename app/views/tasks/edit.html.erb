@@ -1,0 +1,33 @@
+<h1>Edit: <%= @task.title %></h1>
+<!-- <form action="/tasks/#{@task.id}" method="patch">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+  <h2>Title</h2>
+  <input type="text" placeholder="Title" name="task[title]">
+  <h2>Details</h2>
+  <input type="text" placeholder="Details" name="task[details]">
+  <p><input type="checkbox" name="task[completed]"> Completed</p>
+  <p><input type="submit"></p>
+</form>
+ -->
+
+ <%= form_for(@task) do |f| %>
+  <h2>
+    <%= f.label :title %>
+    <p>
+      <%= f.text_field :title %>
+    </p>
+  </h2>
+  <h2>
+    <%= f.label :details %>
+    <p>
+      <%= f.text_field :details %>
+    </p>
+  </h2>
+  <p>
+    <%= f.check_box :completed %>
+    <%= f.label :completed %>
+  </p>
+  <p>
+  <%= f.submit %>
+  </p>
+<% end %>
